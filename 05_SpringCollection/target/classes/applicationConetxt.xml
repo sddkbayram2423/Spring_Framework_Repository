@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--  id nin yanına name=veritabanı ekleyerek alians oluştrurldu.istenirse id istenirse name ile veriler çağrılabilir. -->
+
+
+		<bean id="dbConnection" name="veritabani" class="com.proje.DBConnection.DBConnection"> 
+		<property name="password" value="1234"/>
+		<property name="username" value="root"/>
+		<property name="maps">
+			<map>
+				<entry key="max_connection" value="50"/>
+				<entry key="min_connection" value="10"/>
+				<entry key="max_statement" value="100"/>	
+			</map>
+		</property>
+		
+		<property name="list">
+			<list>
+				<value >min 5 connection</value>
+   		 		<value >max 50 connection</value>
+   		 		<value >100 statement</value>	
+			</list>
+		</property>
+		
+		<property name="props">
+			<props>
+				<prop key="user">root</prop>
+				<prop key="pasword">1234</prop>		
+			</props>
+		</property>
+
+	</bean>
+
+</beans>

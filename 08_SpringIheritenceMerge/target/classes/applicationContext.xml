@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="database" class="com.proje.database.DataBase" abstract="true">
+		<property name="pasword" value="1234"/>
+		<property name="username" value="root"/>
+		<property name="özellikler">
+			<list>
+				<value>min 5 bağlantı</value>
+				<value>max 10 bağlantı</value>
+				<value>bağlantı süresi 10 sn</value>
+			</list>
+		</property>
+		</bean>
+	
+	<bean id="databaseMySql" class="com.proje.database.DataBase" parent="database">
+		<property name="url" value="Mysql"></property>
+		<property name="özellikler" >
+			<list merge="true">
+				<value>bağlantı süresi 100 sn kadar uzayabilir</value>
+				<value>mysql olarak kullan</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="databaseOracle" class="com.proje.database.DataBase" parent="database">
+		<property name="url" value="Oracle"></property>
+		<property name="özellikler" >
+			<list merge="true">
+				<value>bağlantı süresi 200 sn kadar uzayabilir</value>
+				<value>oracle olarak kullan</value>
+			</list>
+		</property>
+	</bean>
+	
+</beans>

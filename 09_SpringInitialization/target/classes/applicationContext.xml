@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean id="database" class="com.proje.DBConnection.DBConnection" init-method="volidation">
+		<property name="password" value="1325456"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/deneme"/>
+<!-- 		<property name="userName" value="root"/> -->
+	</bean>
+
+
+</beans>

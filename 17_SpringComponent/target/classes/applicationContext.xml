@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.proje"></context:component-scan>
+
+		<bean id="dataBase" class="com.proje.database.DataBase">
+			<property name="url" value="${url}"></property>
+			<property name="password" value="${password}"></property>
+			<property name="userName" value="${userName}"></property>
+		
+		</bean>
+		<bean id="dataBase3" class="com.proje.database.DataBase">
+			<property name="url" value="oracel"></property>
+			<property name="password" value="4546546"></property>
+			<property name="userName" value="bayram"></property>
+		
+		</bean>
+	
+		<bean id="dbConnection" class="com.proje.DBConnection.DBConnection" autowire="constructor"></bean>
+		<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+			<property name="location" value="db.properties"></property>
+		</bean>
+
+
+
+
+
+
+
+
+
+</beans>

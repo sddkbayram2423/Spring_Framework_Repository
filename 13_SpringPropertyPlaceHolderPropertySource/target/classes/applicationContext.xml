@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="database" class="com.proje.databse.DataBase">
+		<property name="password" value="${db.properties.password}"/>
+		<property name="url" value="${db.properties.url}"/>
+		<property name="userName" value="${db.properties.password}"/>
+	</bean>
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="locations">
+			<list><value>db.properties</value></list>
+		</property>
+	</bean>
+
+</beans>

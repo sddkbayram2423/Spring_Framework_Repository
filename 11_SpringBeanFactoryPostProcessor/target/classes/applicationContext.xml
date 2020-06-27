@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+
+
+
+	<bean id="database" class="com.proje.DBConnection.DBConnection" init-method="volidation" destroy-method="closeConnection">
+		<property name="password" value="1325456" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/deneme" />
+		<property name="userName" value="root"/>
+	</bean>
+	
+	<bean class="com.proje.factorypostprosesor.BeanFactory"></bean>
+</beans>

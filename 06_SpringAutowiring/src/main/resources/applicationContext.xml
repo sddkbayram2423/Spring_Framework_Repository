@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	
+	<bean id="data" class="com.proje.data.Data">
+		<property name="data1" value="data1"/> 
+		<property name="data2" value="data2"/>
+	</bean>
+	
+	<bean id="dataBase" class="com.proje.database.DataBase">
+		<constructor-arg name="pasword" value="1234"/>
+		<constructor-arg name="url" value="jdbs:mysql"/>
+		<constructor-arg name="username" value="root"/>
+	</bean>
+	<bean id="dbConnection" class="com.proje.dbconnection.DBConnection" autowire="constructor"></bean>
+
+</beans>
